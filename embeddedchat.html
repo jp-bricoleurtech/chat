@@ -11,6 +11,11 @@
          .embeddedServiceHelpButton .helpButton .uiButton:focus {
          outline: 1px solid #6FBF4A;
          }
+         @font-face {
+         font-family: 'Salesforce Sans';
+         src: url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.woff') format('woff'),
+         url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.ttf') format('truetype');
+         }
       </style>
       <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
       <script type='text/javascript'>
@@ -18,11 +23,11 @@
          	embedded_svc.settings.displayHelpButton = true; //Or false
          	embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
          
-         	embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-         	embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+         	//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+         	//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
          
-         	embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-         	embedded_svc.settings.storageDomain = 'https://abilitymap.lightning.force.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+         	//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+         	//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
          
          	// Settings for Chat
          	//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
@@ -38,7 +43,7 @@
          
          	embedded_svc.init(
          		'https://abilitymap.my.salesforce.com',
-         		'https://abilitymap.my.site.com/abilitymapchatvforcesite',
+         		'https://abilitymap.my.site.com/',
          		gslbBaseURL,
          		'00D7F000006PZCr',
          		'Ability_Map_Embedded_Service_Deployment',
@@ -64,12 +69,5 @@
          	initESW('https://service.force.com');
          }
       </script>
-      <div class="embeddedServiceHelpButton">
-         <div class="helpButton">
-            <button class="uiButton">
-            Chat with Agent
-            </button>
-         </div>
-      </div>
    </body>
 </html>
